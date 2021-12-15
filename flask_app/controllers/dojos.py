@@ -8,6 +8,10 @@ def index():
     all_dojos = Dojo.get_all_dojos()
     return render_template('index.html', dojos = all_dojos)
 
+@app.route('/home')
+def home():
+    return redirect('/')
+
 @app.route('/dojo/create', methods=['POST'])
 def create_dojo():
     new_dojo_data = {
